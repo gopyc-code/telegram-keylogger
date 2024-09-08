@@ -11,7 +11,6 @@ if __name__ == "__main__":
         config = json.load(config_file)
         TOKEN = config['BOT_TOKEN']
         DB_NAME = config['DB_NAME']
-        PASSWORD = config['PASSWORD']
 
     bot = Bot(TOKEN, DB_NAME)
     bot_thread = threading.Thread(target=bot.start)
